@@ -33,44 +33,35 @@ function PwGen(options)
   let splitoptions= options.split(",")
   let opt=splitoptions[0];
   let len=splitoptions[1];
-  const lower="abcdefghijklmnopqrstuvwxyz"
-  const upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  const numbers="0987654321"
-  const symbols="}{][^<>!?&$+;:#@]}"
+  
+  const opts = 
+  [
+  "abcdefghijklmnopqrstuvwxyz",
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "0987654321",
+  "}{][^<>!?&$+;:#@]}"
+  ]
   
   //print("opt="+opt)
-  var pw=""
+  let pw=""
+  let used = ""
   for (i=0;i<len;i++)
   {
-    let typeindex=0
-    let type=opt;
-    if (opt.length>1)
+    let index = Math.round(Math.random()*(opt.length-1))
+    if (opt.length>0 && used.length>=0 && used.length!=opt.length)
     {
-      typeindex=Math.round(Math.random()*(opt.length-1))
+      while(used.indexOf(index)>=0)
+      {
+        index=Math.round(Math.random()*(opt.length-1))
+        //print("trying index="+index)
+      }
+      //print("test index="+index+" used indexes="+used)
     }
-    //print("typeindex="+typeindex)
-    type=opt[typeindex]
-  
-    //print("type="+type)
-   
-    switch (type)
-    {
-      case "1":
-      pw+=numbers[Math.round(Math.random()*(numbers.length-1))]
-      break;
-      
-      case "2":
-      pw+=symbols[Math.round(Math.random()*(symbols.length-1))]
-      break;
-      
-      case "3":
-      pw+=lower[Math.round(Math.random()*(lower.length-1))]
-      break;
-      
-      case "4":
-      pw+=upper[Math.round(Math.random()*(upper.length-1))]
-      break;
-    }
+    if (used.indexOf(index)==-1)
+      used+=index
+    //print("index="+index+" used indexes="+used)
+    pw+=opts[index][Math.round(Math.random()*(opts[index].length-1))]
+
     //print(pw)
   }
   return pw;
