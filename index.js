@@ -39,7 +39,7 @@ function PwGen(options)
   "abcdefghijklmnopqrstuvwxyz",
   "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
   "0987654321",
-  "}{][^<>!?&$+;:#@]}"
+  "-%=/\}{][^<>!?&$+;:#@]}"
   ]
   
   //print("opt="+opt)
