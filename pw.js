@@ -25,7 +25,7 @@ function copy() {
   document.execCommand("copy");
 
   /* Alert the copied text */
-  alert("Copied to clipboard: " + copyText.innerHTML);
+  alert(copyText.innerHTML+ "\nCopied to clipboard")
 }
 
 function buildOption(options,checkbox,newoption)
