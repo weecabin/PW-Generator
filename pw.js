@@ -25,7 +25,7 @@ function copy() {
   document.execCommand("copy");
 
   /* Alert the copied text */
-  alert("Copied the text: " + copyText.innerHTML);
+  alert("Copied to clipboard: " + copyText.innerHTML);
 }
 
 function buildOption(options,checkbox,newoption)
