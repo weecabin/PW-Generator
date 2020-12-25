@@ -6,6 +6,7 @@ function pw()
   options += document.getElementById("symbols").checked?"1":"";
   options+=","+ document.getElementById("length").value;
   let newpw = PwGen(options);
+  document.getElementById("result").innerHTML=newPW;
 }
 
 function PwGen(options)
