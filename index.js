@@ -43,7 +43,7 @@ function PwGen(options)
   "-%=/\}{][^<>!?&$+;:#@]}"
   ]
   
-  print("opt="+opt)
+  //print("opt="+opt)
   let pw=""
   let used = ""
   for (i=0;i<len;i++)
