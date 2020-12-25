@@ -8,7 +8,7 @@ function pw()
   options+=","+ document.getElementById("length").value;
   let newpw = PwGen(options);
   
-  document.getElementById("result").innerHTML="aomething";
+  document.getElementById("result").innerHTML= newpw;
 }
 
 function PwGen(options)
