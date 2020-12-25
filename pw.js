@@ -6,18 +6,20 @@ function pw()
   options = buildOption(options, document.getElementById("numbers"),"3");
   options = buildOption(options, document.getElementById("symbols"),"4");
   options+=","+ document.getElementById("length").value;
-  alert(options)
+  //alert(options);
   let newpw = PwGen(options);
+  //alert(newpw);
   document.getElementById("result").innerHTML= newpw;
 }
 
 function buildOption(options,checkbox,newoption)
 {
+  //alert(checkbox.checked);
   if (checkbox.checked==true)
-    options+=newoptionn
+    options+=newoption;
+  //alert(options);
   return options;
 }
-
 
 function PwGen(options)
 {
@@ -33,7 +35,7 @@ function PwGen(options)
   "-%=/\}{][^<>!?&$+;:#@]}"
   ]
   
-  print("opt="+opt)
+  //print("opt="+opt)
   let pw=""
   let used = ""
   for (i=0;i<len;i++)
