@@ -15,17 +15,17 @@ function pw()
 
 function copy() {
   /* Get the text field */
-  var copyText = document.getElementById("copy").innerHTML;
-
+  var copyText = document.getElementById("copy");
+  alert(copyText.innerHTML)
   /* Select the text field */
-  copyText.select(); 
+  copyText.innerHTML.select(); 
   copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
   /* Copy the text inside the text field */
   document.execCommand("copy");
 
   /* Alert the copied text */
-  alert("Copied the text: " + copyText);
+  alert("Copied the text: " + copyText.innerHTML);
 }
 
 function buildOption(options,checkbox,newoption)
