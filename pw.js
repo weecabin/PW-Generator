@@ -9,7 +9,6 @@ function pw()
   //alert(options);
   let newpw = PwGen(options);
   //alert(newpw);
-  document.getElementById("result").innerHTML= newpw;
   document.getElementById("tbresult").value= newpw;
 }
 
