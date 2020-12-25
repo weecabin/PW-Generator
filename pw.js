@@ -1,15 +1,23 @@
 function pw()
 {
-  
-  let options = document.getElementById("lower").checked?"3":"";
-  options += document.getElementById("upper").checked?"4":"";
-  options += document.getElementById("numbers").checked?"1":"";
-  options += document.getElementById("symbols").checked?"2":"";
+  let options = "";
+  options = buildOption(options, document.getElementById("lower"),"1");
+  options = buildOption(options, document.getElementById("upper"),"2");
+  options = buildOption(options, document.getElementById("numbers"),"3");
+  options = buildOption(options, document.getElementById("symbols"),"4");
   options+=","+ document.getElementById("length").value;
   alert(options)
   let newpw = PwGen(options);
-  document.getElementById("result").innerHTML= "shit";
+  document.getElementById("result").innerHTML= newpw;
 }
+
+function buildOption(options,checkbox,newoption)
+{
+  if (checkbox.checked==true)
+    options+=newoptionn
+  return options;
+}
+
 
 function PwGen(options)
 {
@@ -25,23 +33,23 @@ function PwGen(options)
   "-%=/\}{][^<>!?&$+;:#@]}"
   ]
   
-  //print("opt="+opt)
+  print("opt="+opt)
   let pw=""
   let used = ""
   for (i=0;i<len;i++)
   {
     // make sure we get at least one character 
     // from each group of specified strings
-    let index = Math.round(Math.random()*(opt.length-1))
-    if (opt.length>0 && used.length>=0 && used.length!=opt.length)
+    let index = randomchar(opt);
+    if (opt.length>1 && used.length>0 && used.length!=opt.length)
     {
       // find an unused index
       while(used.indexOf(index)>=0)
       {
-        index=Math.round(Math.random()*(opt.length-1))
-        //print("trying index="+index)
+        index=randomchar(opt);
+        //print("is "+index+" in "+used)
       }
-      //print("test index="+index+" used indexes="+used)
+      //print("using "+index) 
     }
     // only save the index if it hasnt been used
     if (used.indexOf(index)==-1)
@@ -49,9 +57,17 @@ function PwGen(options)
     //print("index="+index+" used indexes="+used)
     // pull a random character out of the selected group 
     // and add it to the password
-    pw+=opts[index][Math.round(Math.random()*(opts[index].length-1))]
+    pw+=opts[index-1][Math.round(Math.random()*(opts[index-1].length-1))]
 
     //print(pw)
   }
   return pw;
+}
+
+function randomchar(source)
+{
+  //print(source)
+  let index=Math.round(Math.random()*(source.length-1));
+  //print(index)
+  return source[index]
 }
