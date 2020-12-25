@@ -1,12 +1,12 @@
 function pw()
 {
-  let options = document.getElementById("lower").checked?"1":"";
-  options += document.getElementById("upper").checked?"1":"";
+  let options = document.getElementById("lower").checked?"3":"";
+  options += document.getElementById("upper").checked?"4":"";
   options += document.getElementById("numbers").checked?"1":"";
-  options += document.getElementById("symbols").checked?"1":"";
+  options += document.getElementById("symbols").checked?"2":"";
   options+=","+ document.getElementById("length").value;
-  let newpw = PwGen(options);
-  document.getElementById("result").innerHTML=newPW;
+  //let newpw = PwGen(options);
+  document.getElementById("result").innerHTML=options;
 }
 
 function PwGen(options)
