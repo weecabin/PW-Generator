@@ -15,10 +15,10 @@ function pw()
 
 function copy() {
   /* Get the text field */
-  var copyText = document.getElementById("copy");
-  alert(copyText.innerHTML)
+  var copyText = document.getElementById("result");
+  //alert(copyText.innerHTML)
   /* Select the text field */
-  copyText.innerHTML.select(); 
+  copyText.select(); 
   copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
   /* Copy the text inside the text field */
