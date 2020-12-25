@@ -15,7 +15,7 @@ function pw()
 
 function copy() {
   /* Get the text field */
-  var copyText = document.getElementById("copy");
+  var copyText = document.getElementById("copy").innerHTML;
 
   /* Select the text field */
   copyText.select(); 
@@ -25,7 +25,7 @@ function copy() {
   document.execCommand("copy");
 
   /* Alert the copied text */
-  alert("Copied the text: " + copyText.value);
+  alert("Copied the text: " + copyText);
 }
 
 function buildOption(options,checkbox,newoption)
