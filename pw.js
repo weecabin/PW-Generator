@@ -45,8 +45,8 @@ function PwGen(options)
   
   const opts = 
   [
-  "abcdefghijklmnopqrstuvwxyz",
-  "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "abcdefghijkmnopqrstuvwxyz",
+  "ABCDEFGHJKLMNOPQRSTUVWXYZ",
   "0987654321",
   "-%=/\}{][^<>!?&$+;:#@]}"
   ]
